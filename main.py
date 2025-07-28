@@ -13,6 +13,7 @@ import customtkinter as ctk
 from tkinter import filedialog
 import tkinter.filedialog as fd
 import threading
+from tkinter import PhotoImage
 
 ctk.set_appearance_mode("Dark")
 
@@ -22,7 +23,9 @@ class App(ctk.CTk):
 
         self.title("VideoSplitter")
         self.geometry("700x500")
-        self.iconbitmap("icon.ico")
+        icon = PhotoImage(file="icon.png")
+        self.iconphoto(True, icon) #iconbitmap doesnt work on linux ( .ico )
+
 
         self.video_path = None
         self.save_path = None
